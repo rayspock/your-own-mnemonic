@@ -1,0 +1,59 @@
+{
+  "name": "your-own-mnemonic",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Ray (https://github.com/rayspock/)",
+  "keywords": [
+    "bip39",
+    "mnemonic",
+    "react",
+    "redux",
+    "saga",
+    "typescript"
+  ],
+  "homepage": "https://rayspock.github.io/your-own-mnemonic/",
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.8.24",
+    "@types/react-bootstrap-typeahead": "^3.4.5",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.1",
+    "@types/uuid": "^3.4.5",
+    "bip39": "git+https://github.com/rayspock/bip39.git",
+    "bootstrap": "^4.3.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-bootstrap-typeahead": "^3.4.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "typescript": "^3.6.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.0.5",
+    "uuid": "^3.3.3"
+  }
+}
