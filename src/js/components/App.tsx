@@ -3,6 +3,9 @@ import List from "./List";
 import Form from "./Form";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {REPOSITORY, VERSION, TAG} from "../../env";
 
 const marginTop = {
     marginTop: '80px',
@@ -11,7 +14,7 @@ const marginTop = {
 };
 
 const margin = {
-    margin:'10px'
+    margin: '10px'
 };
 
 const App = () => (
@@ -20,6 +23,12 @@ const App = () => (
             <Navbar.Brand href="#">
                 Your Own Mnemonic
             </Navbar.Brand>
+            <Nav className="ml-auto pr-md-5">
+                <Nav.Link target="_blank" href={TAG}>{VERSION}</Nav.Link>
+                <Nav.Link target="_blank" href={REPOSITORY}>
+                    <FontAwesomeIcon size="lg" icon={['fab', 'github']}/>
+                </Nav.Link>
+            </Nav>
         </Navbar>
         <div style={marginTop}>
             <div className="row" style={margin}>
