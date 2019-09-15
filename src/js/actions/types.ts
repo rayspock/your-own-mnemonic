@@ -1,5 +1,5 @@
-import {ADD_MNEMONIC, GEN_MNEMONIC} from "../constants/action-types";
-import {Seed} from "../reducers/types";
+import {ADD_MNEMONIC, DISMISS_TELEGRAM, FOUND_ERROR, GEN_MNEMONIC} from "../constants/action-types";
+import {Telegram, Seed} from "../reducers/types";
 
 interface GenMnemonicAction {
     type: typeof GEN_MNEMONIC
@@ -11,4 +11,13 @@ interface AddMnemonicAction {
     payload: Seed
 }
 
-export type MnemonicActionTypes = GenMnemonicAction | AddMnemonicAction
+interface FoundErrorAction {
+    type: typeof FOUND_ERROR
+    payload: Telegram
+}
+
+interface DismissTelegramAction {
+    type: typeof DISMISS_TELEGRAM
+}
+
+export type MnemonicActionTypes = GenMnemonicAction | AddMnemonicAction | FoundErrorAction | DismissTelegramAction

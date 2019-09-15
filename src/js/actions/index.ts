@@ -1,6 +1,6 @@
-import {ADD_MNEMONIC, GEN_MNEMONIC} from "../constants/action-types";
+import {ADD_MNEMONIC, DISMISS_TELEGRAM, FOUND_ERROR, GEN_MNEMONIC} from "../constants/action-types";
 import {MnemonicActionTypes} from "./types";
-import {Seed} from "../reducers/types";
+import {Seed, Telegram} from "../reducers/types";
 
 export function genMnemonic(payload: Seed): MnemonicActionTypes {
     return {
@@ -16,3 +16,15 @@ export function addMnemonic(payload: Seed): MnemonicActionTypes {
     }
 };
 
+export function foundError(payload: Telegram): MnemonicActionTypes{
+    return {
+        type: FOUND_ERROR,
+        payload
+    }
+};
+
+export function dismissTelegram(): MnemonicActionTypes {
+    return {
+        type: DISMISS_TELEGRAM
+    }
+};

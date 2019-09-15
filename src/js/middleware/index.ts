@@ -2,7 +2,7 @@ import {MnemonicActionTypes} from "../actions/types";
 import {Dispatch} from "redux";
 import {GEN_MNEMONIC} from "../constants/action-types";
 import {StringUtil} from "../utils/stringUtil";
-import {addMnemonic} from "../actions";
+import {addMnemonic, foundError} from "../actions";
 import uuidv1 from "uuid";
 // @ts-ignore
 import bip39 from "bip39";
@@ -20,7 +20,7 @@ export function MainMiddleware({dispatch}: MiddlewareProps) {
                 try {
                     newMnemonic = bip39.genCustomMnemonic(strMnemonic);
                 } catch (e) {
-                    console.log(e);
+                    return dispatch(foundError({variant: "danger", message: e.message, show: true}));
                 }
 
                 if (!StringUtil.isNullOrEmpty(newMnemonic)) {
