@@ -9,6 +9,14 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
+function noop() {}
+
+if (process.env.NODE_ENV !== 'development') {
+    console.log = noop;
+    console.warn = noop;
+    console.error = noop;
+}
+
 library.add(fab);
 
 render(

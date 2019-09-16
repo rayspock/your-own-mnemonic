@@ -20,6 +20,7 @@ export function MainMiddleware({dispatch}: MiddlewareProps) {
                 try {
                     newMnemonic = bip39.genCustomMnemonic(strMnemonic);
                 } catch (e) {
+                    console.error(e);
                     return dispatch(foundError({variant: "danger", message: e.message, show: true}));
                 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {genMnemonic} from "../actions";
+import {dismissTelegram, genMnemonic} from "../actions";
 import {Seed} from "../reducers/types";
 import {Dispatch} from "redux";
 import Dropdown from "./Picker/Dropdown";
@@ -12,11 +12,13 @@ import bip39 from "bip39";
 
 interface ConnectedFormProps {
     genMnemonic: Function;
+    dismissTelegram: Function;
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        genMnemonic: (seed: Seed) => dispatch(genMnemonic(seed))
+        genMnemonic: (seed: Seed) => dispatch(genMnemonic(seed)),
+        dismissTelegram: () => dispatch(dismissTelegram())
     };
 }
 
@@ -27,12 +29,12 @@ class ConnectedForm extends Component<ConnectedFormProps, any> {
     constructor(props: ConnectedFormProps) {
         super(props);
         this.strength_list = {
-            11: "11",
-            14: "14",
-            17: "17",
-            23: "23"
+            12: "12",
+            15: "15",
+            18: "18",
+            24: "24"
         };
-        const default_strength = 11;
+        const default_strength = 12;
         this.state = {
             mnemonic: ArrayUtil.repeatElement(default_strength, ""),
             strength: default_strength
@@ -69,6 +71,7 @@ class ConnectedForm extends Component<ConnectedFormProps, any> {
     handleSubmit(event: any) {
         event.preventDefault();
         const {mnemonic, strength} = this.state;
+        this.props.dismissTelegram();
         this.props.genMnemonic({mnemonic, id: ""});
         this.clear();
         this.setState({mnemonic: ArrayUtil.repeatElement(strength, "")});
