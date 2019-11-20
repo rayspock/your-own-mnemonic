@@ -1,6 +1,6 @@
 {
   "name": "your-own-mnemonic",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "author": "Ray (https://github.com/rayspock/)",
   "keywords": [
@@ -32,7 +32,7 @@
     "bip39": "git+https://github.com/rayspock/bip39.git#v2.5.0-boost.2",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.12",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-bootstrap-typeahead": "^3.4.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
