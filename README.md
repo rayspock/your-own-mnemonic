@@ -1,6 +1,6 @@
 # Your Own Mnemonic
 
-Choose your own mnemonic from 2048 words list
+Choose your own mnemonic from 2048 words list.
 
 ## Available Scripts
 
