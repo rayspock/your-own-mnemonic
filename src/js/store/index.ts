@@ -4,15 +4,15 @@ import {MainMiddleware} from "../middleware";
 import createSagaMiddleware from "redux-saga";
 import apiSaga from "../sagas/api-saga";
 
-const initialiseSagaMiddleware = createSagaMiddleware();
+const initializeSagaMiddleware = createSagaMiddleware();
 
 const storeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
     rootReducer,
-    storeEnhancers(applyMiddleware(MainMiddleware, initialiseSagaMiddleware))
+    storeEnhancers(applyMiddleware(MainMiddleware, initializeSagaMiddleware))
 );
 
-initialiseSagaMiddleware.run(apiSaga);
+initializeSagaMiddleware.run(apiSaga);
 
 export default store;
